@@ -1,2 +1,13 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <div class="row">
+
+<%= @cocktail.name %>
+
+
+<%= link_to 'Back', cocktails_path %>
+<%= link_to 'All Cocktails', cocktails_path(@cocktails) %>
+<%= link_to 'Edit', edit_cocktail_path %>
+<%= link_to 'Delete', @cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  </div>
+</div>
