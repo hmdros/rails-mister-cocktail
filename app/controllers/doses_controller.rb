@@ -19,7 +19,7 @@ class DosesController < ApplicationController
     find_dose
     @cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to @cocktail
+    redirect_to cocktail_path(@cocktail)
   end
 
   private

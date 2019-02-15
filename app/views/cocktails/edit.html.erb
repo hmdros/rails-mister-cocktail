@@ -1,2 +1,17 @@
-<h1>Cocktails#edit</h1>
-<p>Find me in app/views/cocktails/edit.html.erb</p>
+<div class="banner-new">
+  <div class="container">
+    <div class="text-center">
+      <h1>Would you like to change this drink ?</h1>
+
+      <%= simple_form_for [@cocktail] do |f| %>
+      <%= f.label "What would you like to change?" %>
+      <div class="input-black">
+        <%= f.input :name, class: "text-black" %>
+      </div>
+      <%= f.submit class: "btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
