@@ -11,7 +11,7 @@
     <% @cocktails.each do |cocktail| %>
     <li class="cards__item">
       <div class="card" data-aos="zoom-in" data-aos="fade-left">
-        <div class="card__image card__image"></div>
+        <%= cl_image_tag( cocktail.photo, width: 400, height: 300, crop: :fill, class: "card__image") %>
         <div class="card__content">
           <div class: "card__title">
             <%= cocktail.name %>
