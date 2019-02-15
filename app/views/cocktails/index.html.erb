@@ -1,6 +1,28 @@
 <div class="banner">
   <div class="container">
     <h1><span id="banner-typed-text"></span></h1>
-    <a class="btn btn-flat btn-" href="#">See Drinks</a>
+    <a class="btn btn-flat fas fa-arrow-alt-circle-down" href="#">See Drinks</a>
   </div>
 </div>
+<div class="banner-drinks grid-container">
+  <h1 class="text-center">All drinks</h1>
+  <ul class="cards">
+
+    <% @cocktails.each do |cocktail| %>
+    <li class="cards__item">
+      <div class="card" data-aos="zoom-in" data-aos="fade-left">
+        <div class="card__image card__image"></div>
+        <div class="card__content">
+          <div class: "card__title">
+            <%= cocktail.name %>
+          </div>
+          <div class="card__text">
+            <<p>Drink Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo, vitae iaculis nisl. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.</p>
+            <%= link_to 'See this drink', cocktail, class: "btn btn--block card__btn" %>
+          </div>
+        </div>
+      </div>
+    </li>
+    <% end %>
+
+  </ul>

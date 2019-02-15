@@ -11,6 +11,8 @@
 import 'bootstrap';
 import { loadDynamicBannerText } from '../components/typed';
 loadDynamicBannerText();
+import { aosnew } from '../components/aos';
+aosnew();
 // javascript code goes here
 
 
