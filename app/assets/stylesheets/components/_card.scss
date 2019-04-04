@@ -67,6 +67,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border-radius: 5px;
   &:hover {
     .card__image {
       filter: contrast(100%);
@@ -82,6 +83,7 @@ img {
 }
 
 .card__image {
+  margin: 2px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,6 +113,7 @@ img {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-size: 18px;
 }
 
 .card__text {
@@ -118,4 +121,5 @@ img {
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
+  font-size: 14px;
 }

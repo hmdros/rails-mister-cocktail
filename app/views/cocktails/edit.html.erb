@@ -7,6 +7,11 @@
       <%= f.label "What would you like to change?" %>
       <div class="input-black">
         <%= f.input :name, class: "text-black" %>
+        <% @cocktail.doses.each do |dose| %>
+         <%= dose.ingredient[:name] %>
+          <%= dose[:description] %>
+          <%= link_to 'X', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>

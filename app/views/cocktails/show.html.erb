@@ -1,25 +1,26 @@
 <div class="container">
   <div class="row">
-
-    <%= @cocktail.name %>
-    <br>
-    <br>
-    <% @cocktail.doses.each do |dose| %>
-    <%= dose.ingredient[:name] %>
-    <%= dose[:description] %>
-    <%= link_to 'X', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br>
-    <br>
-    <%= link_to '+ Dose', new_cocktail_dose_path(@cocktail) %>
-    <%= link_to 'Back', cocktails_path %>
-    <%= link_to 'All Cocktails', cocktails_path(@cocktails) %>
-    <%= link_to 'Edit', edit_cocktail_path(@cocktail) %>
-    <%= link_to 'Delete', @cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-    <!-- app/views/articles/index.html.erb --> -->
-    <%= cl_image_tag( @cocktail.photo,
-    width: 400, height: 300, crop: :fill) %>
-
+    <h1><%= @cocktail.name %></h1>
+    <h3>Ingredients: </h3>
+    <div class="col-md-9">
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.ingredient[:name] %><%= dose[:description] %></li>
+        <% end %>
+      </ul>
+      <div>
+        <%= cl_image_tag( @cocktail.photo,
+        width: 400, height: 300, crop: :fill) %>
+      </div>
+      <div>
+        <%= link_to 'Back to Drinks', cocktails_path, class: "btn btn-ghost" %>
+        <%= link_to 'Edit Drink', edit_cocktail_path(@cocktail), class: "btn btn-ghost" %>
+        <%= link_to 'Delete Drink', @cocktail, method: :delete, class: "btn btn-ghost", style: "color: red;", data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <h3>See other drinks</h3>
+      <%= link_to %>
+    </div>
   </div>
 </div>

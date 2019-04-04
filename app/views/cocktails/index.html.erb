@@ -6,21 +6,18 @@
   </div>
 </div>
 <div class="banner-drinks grid-container">
-  <h1 class="text-center">All drinks</h1>
+  <h1 class="text-center">Choose your favorite drink</h1>
   <ul class="cards">
 
     <% @cocktails.each do |cocktail| %>
     <li class="cards__item">
       <div class="card" data-aos="zoom-in" data-aos="fade-left">
-        <%= cl_image_tag( cocktail.photo, width: 600, height: 440, crop: :fill, class: "card__image") %>
+        <%= link_to cl_image_tag( cocktail.photo, width: 600, height: 440, crop: :fill, class: "card__image"), cocktail %>
         <div class="card__content">
           <div class: "card__title">
             <%= cocktail.name %>
           </div>
-          <div class="card__text">
-            <p>Drink Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo, vitae iaculis nisl. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.</p>
-            <%= link_to 'See this drink', cocktail, class: "btn btn--block card__btn" %>
-          </div>
+          <p><%= cocktail.description %></p>
         </div>
       </div>
     </li>
