@@ -59,7 +59,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 gem 'faker'

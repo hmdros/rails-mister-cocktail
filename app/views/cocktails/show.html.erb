@@ -5,13 +5,14 @@
     <div class="col-md-9">
       <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient[:name] %><%= dose[:description] %></li>
+        <li><%= dose.ingredient[:name] %><%= dose[:description] %></li>
         <% end %>
       </ul>
       <div>
         <%= cl_image_tag( @cocktail.photo,
         width: 400, height: 300, crop: :fill) %>
       </div>
+
       <div>
         <%= link_to 'Back to Drinks', cocktails_path, class: "btn btn-ghost" %>
         <%= link_to 'Edit Drink', edit_cocktail_path(@cocktail), class: "btn btn-ghost" %>
@@ -23,3 +24,9 @@
     </div>
   </div>
 </div>
+<%= render '/reviews/new', cocktail: @cocktail, review: @review%>
+<% @cocktail.reviews.each do |review| %>
+<%= review.rating %>
+<%= review.content %>
+<%= review.date %>
+<% end %>
