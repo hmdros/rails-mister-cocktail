@@ -1,21 +1,36 @@
-<div class="banner-new">
-  <div class="container">
-    <div class="text-center">
-      <h1>You are the barman here</h1>
-      <div class="col-md-12">
-        <%= simple_form_for [@cocktail], class: "form-new" do |f| %>
-        <%= f.label "What is the cocktail's name?" %>
-        <%= f.input :name %>
-        <%= f.input :ingredient_ids, collection: Ingredient.all %>
-        <%= f.input :description, label: 'Quantity' %>
-        <%= f.input :description %>
-        <%= f.input :instruction %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit class: "btn-primary" %>
-        <% end %>
-      </div>
-    </div>
+ <div class="container">
+  <%= simple_form_for [@cocktail], class: "form-signin" do |f| %>
+  <div class="text-center mb-4">
+    <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">You are the Barman here!</h1>
   </div>
-</div>
 
+  <div class="form-label-group">
+    <%= f.label "What is the cocktail's name?", for:"inputName" %>
+    <%= f.input :name, class: "form-control", id: "inputName", placeholder: "Name" %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label "Describe it for us", for:"inputDescription" %>
+    <%= f.input :description, class: "form-control", id: "inputDescription", placeholder: "Description" %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label "Which ingredient does it take?", for:"inputIngredient" %>
+    <%= f.input :ingredient_ids, class: "form-control", id: "inputIngredient", placeholder: "ingredient", collection: Ingredient.all %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label "And how should it be done?", for:"inputInstruction" %>
+    <%= f.input :instruction, class: "form-control", id: "inputInstruction", placeholder: "instruction" %>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label "Send us a beatiful picture of him", for:"inputInstruction" %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+
+  <%= f.submit class: "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+</div>
